@@ -13,20 +13,20 @@ public class Transition extends PetriObject {
 
 
     public boolean firable() {
-        boolean firable = true;
+        boolean firable = false;
 
 
         firable = ! this.isNotConnected();
 
         for (Arc arc : input_arcs) {
-            firable = firable & arc.fire_test();
-            firable = (arc.getWeight()<=(arc.getSpot().getTokens()));
+           if((firable & arc.fire_test()==false)) return false;
+            if((arc.getWeight()<=(arc.getSpot().getTokens()))==false) return false;
         }
         for (Arc arc : output_arcs) {
-            firable = firable & arc.fire_test();
+            if((firable & arc.fire_test())==false) return false;
         }
 
-        return firable;
+        return true;
 
 
     }
@@ -37,7 +37,7 @@ public class Transition extends PetriObject {
         if(input_arcs==null) input_arcs = new ArrayList<>();
         return this.input_arcs;
     }
-    public List<Arc> getOutptArcs()
+    public List<Arc> getOutputArcs()
     {
         if(output_arcs==null) input_arcs = new ArrayList<>();
         return this.output_arcs;
@@ -93,6 +93,7 @@ public class Transition extends PetriObject {
     public List<Arc> getInput_arcs() {
         return input_arcs;
     }
+
 
     public List<Arc> getOutput_arcs() {
         return output_arcs;

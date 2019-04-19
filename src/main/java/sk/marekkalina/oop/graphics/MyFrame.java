@@ -1,11 +1,14 @@
 package sk.marekkalina.oop.graphics;
 
+import javafx.scene.control.ButtonBar;
 import sk.marekkalina.oop.generated.Document;
 import sk.marekkalina.oop.generated.DrawableTransformer;
 import sk.marekkalina.oop.generated.Importer;
 import sk.marekkalina.oop.generated.PetrinetTransformer;
 import sk.marekkalina.oop.petrinet.PNet;
 import sk.marekkalina.oop.generated.*;
+
+import javax.swing.*;
 import javax.xml.bind.JAXBException;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -18,6 +21,7 @@ import java.util.List;
 
 
 
+
 public class MyFrame extends Frame implements ActionListener {
     private MenuBar menuBar;
 
@@ -25,29 +29,34 @@ public class MyFrame extends Frame implements ActionListener {
     private MyCanvas canvas;
 
     public MyFrame() throws  HeadlessException {
+
+
         super("Petrinere editor");
         setVisible(true);
-        setSize(640,480);
+        setSize(1600,800);
         addWindowListener(new Closer()); //not by Chainsmokers
+
+        //but.setForeground(Color.yellow);
+
+
         this.canvas = new MyCanvas();
         this.add("Center",canvas);
 
-
+        canvas.setBackground(Color.WHITE);
         menuBar = new MenuBar();
+
+
         Menu menu1 = new Menu("File");
-        MenuItem mItem1 = new MenuItem("New");
-
+        MenuItem mItem1 = new MenuItem("Select file ...");
+        mItem1.setActionCommand("New");
         menu1.add(mItem1);
-
         menuBar.add(menu1);
-
         setMenuBar(menuBar);
 
+
         mItem1.addActionListener(this);
-
-
         canvas.addMouseListener(canvas);
-        canvas.setBackground(Color.WHITE);
+
 
 
 

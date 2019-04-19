@@ -26,6 +26,14 @@ public class PetriObject {
         this.ID = ID;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setID(long ID) {
+        this.ID = ID;
+    }
+
     @Override
     public String toString() {
         return "PetriObject{" +

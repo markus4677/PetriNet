@@ -22,7 +22,11 @@ public class PetrinetTransformer extends Transformer<PNet> {
                     place.getLabel(),
                     place.getTokens()
             );
+            place1.setID(place.getId());
+            place1.setName(place.getLabel());
+
             net.addPlace(place1);
+
             //System.out.println(place1.getID());
         }
 
@@ -32,6 +36,8 @@ public class PetrinetTransformer extends Transformer<PNet> {
               transition.getLabel(),
               transition.getId()
             );
+            t.setID(transition.getId());
+            t.setName(transition.getLabel());
         net.addTransition(t);
 
         }
@@ -41,23 +47,25 @@ public class PetrinetTransformer extends Transformer<PNet> {
 
         for (Arc arc : document.getArc()) {
 
-            boolean state = false;
+            boolean isPlace = false;
             for (Place place1 : document.getPlace())
             {
                 if(place1.getId()==arc.getDestinationId())
-                { state=true;}
+                { isPlace=true;}
                 else{ continue;}
             };
 
 
-            if(state)
+            if(isPlace)
             {
                 sk.marekkalina.oop.petrinet.Arc a = new sk.marekkalina.oop.petrinet.Arc(
-                        net.getTransitionByID(arc.getDestinationId()),
-                        net.getPlaceByID(arc.getSourceId()));
+                        net.getTransitionByID(arc.getSourceId()),
+                        net.getPlaceByID(arc.getDestinationId()));
 
+                //System.out.println("Transition ==> Place :"+" "+net.getTransitionByID(arc.getSourceId()).getName()+"->"+" "+net.getPlaceByID(arc.getDestinationId()).getName());
                 //System.out.println(net.getTransitionByID(arc.getSourceId()).getID()+"||---> Place"+net.getPlaceByID(arc.getDestinationId()).getID());
                 a.setWeight(arc.getMultiplicity());
+
 
 
             }
@@ -66,6 +74,7 @@ public class PetrinetTransformer extends Transformer<PNet> {
                 sk.marekkalina.oop.petrinet.Arc a = new sk.marekkalina.oop.petrinet.Arc(
                         net.getPlaceByID(arc.getSourceId()),
                         net.getTransitionByID(arc.getDestinationId()));
+                //System.out.println("Place ==> Transition:"+" "+net.getPlaceByID(arc.getSourceId()).getName()+"->"+"TID"+net.getTransitionByID(arc.getDestinationId()).getName());
                 //System.out.println(net.getPlaceByID(arc.getSourceId()).getID()+" Place--->||"+net.getTransitionByID(arc.getDestinationId()).getID());
                 a.setWeight(arc.getMultiplicity());
 
@@ -77,14 +86,20 @@ public class PetrinetTransformer extends Transformer<PNet> {
 
         }
 
-        for (sk.marekkalina.oop.petrinet.Transition ttt : net.getTransitions())
-
-            for(sk.marekkalina.oop.petrinet.Arc arch:ttt.getInput_arcs())
-            {
-                System.out.println(arch.toString());
-            }
 
 
+
+//        for (sk.marekkalina.oop.petrinet.Transition ttt : net.getTransitions()) {
+//
+//            for (sk.marekkalina.oop.petrinet.Arc arch : ttt.getInput_arcs()) {
+//                System.out.println("InputArch:  " + arch.toString());
+//            }
+//
+//
+//            for (sk.marekkalina.oop.petrinet.Arc arch : ttt.getOutput_arcs()) {
+//                System.out.println("OutputArch:  " + arch.toString());
+//            }
+//        }
         return net;
 
     }

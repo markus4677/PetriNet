@@ -17,6 +17,7 @@ public class Place extends PetriObject {
 
     }
 
+
     public String getName() {
         return name;
     }
@@ -28,6 +29,7 @@ public class Place extends PetriObject {
     public Place(String name, long ID) {
         super(name, ID);
     }
+
 
 
 

@@ -52,31 +52,31 @@ public class Document {
 
 
 
-//    protected int i;
-//    public Transition docgetTransitionByID(long ID)
-//    {
-//
-//        for (Transition tt:transition)
-//        {
-//            if(tt.getId()==ID) {i=transition.indexOf(tt);}
-//            else  continue;
-//        }
-//        return transition.get(i);
-//    }
-//
-//
-//protected int j;
-//    public Place docgetPlaceByID(long ID)
-//    {
-//        int j;
-//        for (Place pp:place)
-//        {
-//            if(pp.getId()==ID) j = place.indexOf(pp);
-//
-//        }
-//        return place.get(j);
-//    }
-//
+
+    public Transition docgetTransitionByID(long ID)
+    {
+
+        for (Transition tt:transition)
+        {
+            if(tt.getId()==ID) return tt;
+            else  continue;
+        }
+        return transition.get(1);
+    }
+
+
+
+    public Place docgetPlaceByID(long ID)
+    {
+
+        for (Place pp:place)
+        {
+            if(pp.getId()==ID) return pp;
+
+        }
+        return place.get(1);
+    }
+
 //
 //
 //

@@ -48,6 +48,7 @@ public class Arcc2D extends Line2D.Float implements Drawable  {
     }
 
     public void draw(Graphics2D graphics2D){
+        graphics2D.setStroke(new BasicStroke(2));
         graphics2D.draw(this);
 
     };

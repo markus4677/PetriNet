@@ -27,15 +27,26 @@ public class Place2D extends Ellipse2D.Float implements Drawable<Place> {
     @Override
     public void draw(Graphics2D graphics2D){
         graphics2D.draw(this);
-        graphics2D.drawString(""+place.getTokens(),(int) getCenterX(),(int) getCenterY());
+        //graphics2D.fill((Shape) Color.black);
+
+
         //Dimension d = this.getPreferredSize();
         int fontSize = 20;
 
 
 
-        graphics2D.setColor(Color.red);
-        graphics2D.drawString(place.getName(),(int) getCenterX(),(int) getCenterY()+20);
+        graphics2D.setColor(Color.white);
+        //graphics2D.fillOval((int)getCenterX(),(int)getCenterY(),10,10);
+
+        graphics2D.setColor(Color.white);
+        graphics2D.fillOval((int)getCenterX()-19,(int)getCenterY()-19,39,39);
         graphics2D.setColor(Color.black);
+        graphics2D.drawString(""+place.getTokens(),(int) getCenterX()-3,(int) getCenterY()+3);
+        graphics2D.drawString(place.getName(),(int) getCenterX(),(int) getCenterY()+40);
+
+        //graphics2D.fill((Shape) Color.white);
+
+
 
 
     };

@@ -23,10 +23,26 @@ public class Transition2D extends Rectangle2D.Float implements Drawable<Transiti
     public void draw(Graphics2D graphics2D)
     {
         graphics2D.draw(this);
-        //graphics2D.setColor(Color.white);
-        //graphics2D.fillRect((int) x+2,(int) y+2,37,37);
-        //graphics2D.setColor(Color.black);
+        graphics2D.drawString(transition.getName(),(int) getCenterX()-50,(int) getCenterY()+40);
+
+        if(transition.firable()==true)
+        {
+
+
+            graphics2D.setColor(Color.green);
+            graphics2D.fillRect((int) x+1,(int) y+1,39,39);
+            graphics2D.setColor(Color.black);
+        }
+        else
+            {
+            graphics2D.setColor(Color.white);
+            graphics2D.fillRect((int) x+1,(int) y+1,39,39);
+            graphics2D.setColor(Color.black);
+        }
     }
+
+
+
     @Override
     public void onClick(MouseEvent e)
     {
