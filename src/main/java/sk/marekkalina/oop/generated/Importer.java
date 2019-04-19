@@ -15,10 +15,9 @@ public class Importer {
 
     public Document importDocument(String path) throws JAXBException, FileNotFoundException
     {
-        InputStream resource = ClassLoader.getSystemResourceAsStream("insurance.xml");
+        InputStream resource = new FileInputStream(path);
         JAXBContext context = JAXBContext.newInstance(Document.class);
         Unmarshaller unmarshaller = context.createUnmarshaller();
-
         return ((Document) unmarshaller.unmarshal(resource));
     }
 
