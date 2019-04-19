@@ -20,16 +20,39 @@ public class PNet extends PetriObject {
 //        p.addTokens(tokens);
 //        spots.add(p);
 //    }
-//    public Place getPlaceByID(long ID)
-//    {
-//        Place temp = new Place("NULL",404);
-//        for(Place plac:spots)
-//        {
-//            if(plac.getID()==ID) temp=plac;
-//            else return temp;
-//        }
-//        return temp;
-//    }
+public List<Arc> getArcs() {
+    if (arcs== null) {
+       arcs= new ArrayList<Arc>();
+    }
+    return this.arcs;
+}
+
+
+
+protected int j;
+    public Place getPlaceByID(long ID)
+    {
+
+        for(Place pp:spots)
+        {
+            if(pp.getID()==ID) {j=spots.indexOf(pp);}
+            else continue;
+        }
+        return spots.get(j);
+    }
+
+
+protected int i;
+    public Transition getTransitionByID(long ID)
+    {
+
+        for (Transition tt:trans)
+        {
+            if(tt.getID()==ID) {i=trans.indexOf(tt);}
+                else  continue;
+        }
+        return trans.get(i);
+    }
 
 //
 //    public int gettokensbyid(String name,long ID){
@@ -46,13 +69,20 @@ public class PNet extends PetriObject {
     public void addPlace(Place place)
     {
 
-        //Place spot = new Place(name,ID);
+
         spots.add(place);
     }
+
+
 
     public void addTransition(Transition transs)
     {
         trans.add(transs);
+    }
+
+    public void addArc(Arc arc)
+    {
+        arcs.add(arc);
     }
 
 
@@ -64,6 +94,8 @@ public class PNet extends PetriObject {
     {
         return trans;
     }
+
+    private boolean state = false;
 
 
     public Place place(String name, long ID) {

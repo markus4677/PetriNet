@@ -1,4 +1,5 @@
 package sk.marekkalina.oop;
+//import sk.marekkalina.oop.graphics.
 
 
 import javax.xml.bind.JAXBContext;
@@ -9,14 +10,18 @@ import java.io.InputStream;
 import sk.marekkalina.oop.generated.Document;
 import sk.marekkalina.oop.graphics.MyCanvas;
 import sk.marekkalina.oop.graphics.MyFrame;
+import sk.marekkalina.oop.petrinet.PNet;
 
 public class Main {
 
     public static void main(String[] args) {
 
 
-        MyFrame frame = new MyFrame();
-        MyCanvas platno  = new MyCanvas();
+        new MyFrame();
+
+
+
+
 
 
 

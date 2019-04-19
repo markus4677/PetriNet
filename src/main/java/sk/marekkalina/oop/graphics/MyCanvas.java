@@ -9,41 +9,44 @@ public class MyCanvas extends Canvas implements MouseListener {
 
     private List<Drawable> elementList = new LinkedList<Drawable>();
 
-    public void paint(Graphics2D g)
-    {
-        for (Drawable el:elementList)
-        {
-            el.draw((Graphics2D) g);
-        }
+    public void setElementList(List<Drawable> elementList) {
+        this.elementList = elementList;
     }
 
-    public void mouseClicked(MouseEvent e)
-    {
-        for(Drawable el :elementList)
-        {
-            if(el.contains(e.getX(),getY()))
-            {
-                el.onClick(e);
+    //@Override
+    public void mouseClicked(MouseEvent e) {
+        for (Drawable element: elementList){
+            if (element.contains(e.getX(), e.getY())){
+                element.onClick(e);
+                this.repaint();
+                break;
             }
         }
     }
-    public void mousePressed(MouseEvent e)
-    {
+
+    //@Override
+    public void mousePressed(MouseEvent e) {
     }
 
-
-
-
-    public void mouseReleased(MouseEvent e)
-    {
-    }
-    public void mouseEntered(MouseEvent e)
-    {
-    }
-    public void mouseExited(MouseEvent e)
-    {
+    //@Override
+    public void mouseReleased(MouseEvent e) {
     }
 
+    //@Override
+    public void mouseEntered(MouseEvent e) {
+    }
 
+    //@Override
+    public void mouseExited(MouseEvent e) {
+    }
 
+    @Override
+    public void paint(Graphics graphics) {
+
+        Graphics2D g2 = (Graphics2D)graphics;
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+                RenderingHints.VALUE_ANTIALIAS_ON);
+
+        for (Drawable element : elementList) element.draw(g2);
+    }
 }

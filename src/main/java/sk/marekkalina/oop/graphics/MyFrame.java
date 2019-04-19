@@ -1,19 +1,25 @@
 package sk.marekkalina.oop.graphics;
 
-import sk.marekkalina.oop.generated.*;
+import sk.marekkalina.oop.generated.Document;
+import sk.marekkalina.oop.generated.DrawableTransformer;
+import sk.marekkalina.oop.generated.Importer;
+import sk.marekkalina.oop.generated.PetrinetTransformer;
 import sk.marekkalina.oop.petrinet.PNet;
-import sun.awt.image.PNGImageDecoder;
-
+import sk.marekkalina.oop.generated.*;
 import javax.xml.bind.JAXBException;
 import java.awt.*;
-import java.awt.event.*;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.FileNotFoundException;
+import java.util.List;
+
+
+
 
 public class MyFrame extends Frame implements ActionListener {
+    private MenuBar menuBar;
 
 
     private MyCanvas canvas;
@@ -22,43 +28,67 @@ public class MyFrame extends Frame implements ActionListener {
         super("Petrinere editor");
         setVisible(true);
         setSize(640,480);
-       //addWindowListener((WindowAdapter) win);
-        canvas = new MyCanvas();
-    };
+        addWindowListener(new Closer()); //not by Chainsmokers
+        this.canvas = new MyCanvas();
+        this.add("Center",canvas);
 
 
+        menuBar = new MenuBar();
+        Menu menu1 = new Menu("File");
+        MenuItem mItem1 = new MenuItem("New");
 
-    public void actionPerformed(ActionEvent ae)
-    {
-        try
-        {
-            FileDialog dialog = new FileDialog(this,"Otvor",FileDialog.LOAD);
-            String path = dialog.getDirectory()+dialog.getFile();
-            Importer importer = new Importer();
-            Document document = importer.importDocument(path);
+        menu1.add(mItem1);
 
-            PetrinetTransformer netTransformer = new PetrinetTransformer();
-            PNet net = netTransformer.transform(document);
+        menuBar.add(menu1);
 
-            DrawableTransformer drawableTransformer = new DrawableTransformer();
-            List<Drawable> drawableList = drawableTransformer.transform(document);
+        setMenuBar(menuBar);
+
+        mItem1.addActionListener(this);
 
 
-
-
-        }
-        catch (JAXBException excep)
-        {
-            excep.printStackTrace();
-        }
-        catch (FileNotFoundException excep)
-        {
-            excep.printStackTrace();
-        }
-
+        canvas.addMouseListener(canvas);
+        canvas.setBackground(Color.WHITE);
 
 
 
     };
 
+
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getActionCommand().equals("New")) {
+            try {
+
+                FileDialog fileDialog = new FileDialog(this, "Otvor", FileDialog.LOAD);
+                fileDialog.setDirectory("./src/main/resources");
+                fileDialog.setVisible(true);
+                fileDialog.setFile("insurance.xml");
+                String path = fileDialog.getDirectory() + fileDialog.getFile();
+
+
+                Importer importer = new Importer();
+                Document document = importer.importDocument(path);
+
+                PetrinetTransformer PetrinetTransformer = new PetrinetTransformer();
+                PNet petriFlow = PetrinetTransformer.transform(document);
+
+                DrawableTransformer drawableTransformer = new DrawableTransformer(petriFlow);
+                List<Drawable> drawableList = drawableTransformer.transform(document);
+
+                canvas.setElementList(drawableList);
+                canvas.repaint();
+            } catch (FileNotFoundException e1) {
+                e1.printStackTrace();
+                System.out.println(e1.getMessage());
+            } catch (JAXBException e1) {
+                e1.printStackTrace();
+                System.out.println(e1.getMessage());
+            }
+        }
+    }
 }
+
+
+
+

@@ -41,7 +41,21 @@ public class Arc extends PetriObject
     }
 
 
+    public int getWeight() {
+        return weight;
+    }
 
+    public direction getDir() {
+        return dir;
+    }
+
+    public Place getSpot() {
+        return spot;
+    }
+
+    public Transition getTrans() {
+        return trans;
+    }
 
     private Arc(direction direct, Place spott, Transition transs) {
         this.dir = direct;
@@ -49,13 +63,14 @@ public class Arc extends PetriObject
         this.trans = transs;
     }
 
-    protected Arc(Place spot, Transition trans) {
+    public Arc(Place spot, Transition trans) {
         this(direction.PLACE_TO_TRANSITION, spot, trans);
         trans.addInputArcs(this);
 
     }
 
-    protected Arc(Transition trans, Place spot)
+
+    public Arc(Transition trans, Place spot)
     {
         this(direction.TRANSITION_TO_PLACE, spot, trans);
         trans.addOutputArcs(this);
@@ -79,7 +94,6 @@ public class Arc extends PetriObject
     public String toString() {
         return "Arc{" +
                 "weight=" + weight +
-                ", dir=" + dir +
                 ", spot=" + spot +
                 ", trans=" + trans +
                 '}';

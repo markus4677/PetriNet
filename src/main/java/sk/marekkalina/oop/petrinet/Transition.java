@@ -20,7 +20,7 @@ public class Transition extends PetriObject {
 
         for (Arc arc : input_arcs) {
             firable = firable & arc.fire_test();
-            //firable = (arc.getWeight()<=(arc.getSpot().getTokens()));
+            firable = (arc.getWeight()<=(arc.getSpot().getTokens()));
         }
         for (Arc arc : output_arcs) {
             firable = firable & arc.fire_test();
@@ -32,15 +32,34 @@ public class Transition extends PetriObject {
     }
 
 
+    public List<Arc> getInputsArcs()
+    {
+        if(input_arcs==null) input_arcs = new ArrayList<>();
+        return this.input_arcs;
+    }
+    public List<Arc> getOutptArcs()
+    {
+        if(output_arcs==null) input_arcs = new ArrayList<>();
+        return this.output_arcs;
+    }
+
+
+
+
+
 
     public void fire() {
         boolean r = firable();
-        if (r == true){
-                    for (Arc arc : input_arcs) {
-                        arc.fire();
+        if (r){
+                    for (Arc arc1 : input_arcs) {
+                        if(arc1.getSpot().getTokens()>0)
+                        arc1.fire();
+                        System.out.println("Input arc fired: "+arc1.toString());
                     }
                     for (Arc arc : output_arcs) {
+
                         arc.fire();
+                        System.out.println("Output arc fired"+arc.toString());
                     }
                     for (ResetArc reset_arc : reset_arcs)
                     {
@@ -52,7 +71,7 @@ public class Transition extends PetriObject {
 
     public void addInputArcs(Arc arc) {
         this.input_arcs.add(arc);
-    }
+    };
 
     public void addOutputArcs(Arc arc) {
         this.output_arcs.add(arc);
@@ -71,13 +90,23 @@ public class Transition extends PetriObject {
 
 
 
+    public List<Arc> getInput_arcs() {
+        return input_arcs;
+    }
+
+    public List<Arc> getOutput_arcs() {
+        return output_arcs;
+    }
+
+    public List<ResetArc> getReset_arcs() {
+        return reset_arcs;
+    }
+
 
 
     @Override
     public String toString() {
         return "Transition{" +
-                "input_arcs=" + input_arcs +
-                ", output_arcs=" + output_arcs +
                 ", name='" + name + '\'' +
                 ", ID=" + ID +
                 '}';

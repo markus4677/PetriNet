@@ -3,14 +3,12 @@ package sk.marekkalina.oop.petrinet;
 public class Place extends PetriObject {
 
 
+    private int x;
+    private int y;
 
     private int tokens = 0;
 
-//    public Place getPlaceByID(long ID)
-//    {
-//
-//
-//    }
+
 
 
     public Place(long ID, String name, int tokens) {

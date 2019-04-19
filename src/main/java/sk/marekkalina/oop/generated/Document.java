@@ -1,7 +1,10 @@
 
 package sk.marekkalina.oop.generated;
 
+import com.sun.deploy.uitoolkit.impl.text.TextPluginUIFactory;
+
 import java.util.ArrayList;
+import java.util.List;import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -45,89 +48,60 @@ public class Document {
     protected List<Place> place;
     protected List<Arc> arc;
 
-    /**
-     * Gets the value of the transition property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the transition property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getTransition().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Transition }
-     * 
-     * 
-     */
+
+
+
+
+//    protected int i;
+//    public Transition docgetTransitionByID(long ID)
+//    {
+//
+//        for (Transition tt:transition)
+//        {
+//            if(tt.getId()==ID) {i=transition.indexOf(tt);}
+//            else  continue;
+//        }
+//        return transition.get(i);
+//    }
+//
+//
+//protected int j;
+//    public Place docgetPlaceByID(long ID)
+//    {
+//        int j;
+//        for (Place pp:place)
+//        {
+//            if(pp.getId()==ID) j = place.indexOf(pp);
+//
+//        }
+//        return place.get(j);
+//    }
+//
+//
+//
+//
     public List<Transition> getTransition() {
         if (transition == null) {
-            transition = new ArrayList<Transition>();
+            transition = new ArrayList<>();
         }
         return this.transition;
     }
 
-    /**
-     * Gets the value of the place property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the place property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPlace().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Place }
-     * 
-     * 
-     */
+
+
+
     public List<Place> getPlace() {
         if (place == null) {
-            place = new ArrayList<Place>();
+            place = new ArrayList<>();
         }
         return this.place;
     }
 
-    /**
-     * Gets the value of the arc property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the arc property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getArc().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Arc }
-     * 
-     * 
-     */
+
+
     public List<Arc> getArc() {
         if (arc == null) {
-            arc = new ArrayList<Arc>();
+            arc = new ArrayList<>();
         }
         return this.arc;
     }
