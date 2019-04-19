@@ -9,18 +9,17 @@ import javax.xml.namespace.QName;
 
 
 /**
- * This object contains factory methods for each 
- * Java content interface and Java element interface 
- * generated in the sk.stuba.fei.oop.generated package. 
- * <p>An ObjectFactory allows you to programatically 
- * construct new instances of the Java representation 
- * for XML content. The Java representation of XML 
- * content can consist of schema derived interfaces 
- * and classes representing the binding of schema 
- * type definitions, element declarations and model 
- * groups.  Factory methods for each of these are 
+ * This object contains factory methods for each
+ * Java content interface and Java element interface
+ * generated in the sk.stuba.fei.oop.generated package.
+ * <p>An ObjectFactory allows you to programatically
+ * construct new instances of the Java representation
+ * for XML content. The Java representation of XML
+ * content can consist of schema derived interfaces
+ * and classes representing the binding of schema
+ * type definitions, element declarations and model
+ * groups.  Factory methods for each of these are
  * provided in this class.
- * 
  */
 @XmlRegistry
 public class ObjectFactory {
@@ -39,14 +38,12 @@ public class ObjectFactory {
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: sk.stuba.fei.oop.generated
-     * 
      */
     public ObjectFactory() {
     }
 
     /**
      * Create an instance of {@link Transition }
-     * 
      */
     public Transition createTransition() {
         return new Transition();
@@ -54,7 +51,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Place }
-     * 
      */
     public Place createPlace() {
         return new Place();
@@ -62,7 +58,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Arc }
-     * 
      */
     public Arc createArc() {
         return new Arc();
@@ -70,7 +65,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link BreakPoint }
-     * 
      */
     public BreakPoint createBreakPoint() {
         return new BreakPoint();
@@ -78,7 +72,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Document }
-     * 
      */
     public Document createDocument() {
         return new Document();
@@ -86,7 +79,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "", name = "id")
     public JAXBElement<Integer> createId(Integer value) {
@@ -95,7 +87,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "", name = "x")
     public JAXBElement<Integer> createX(Integer value) {
@@ -104,7 +95,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "", name = "y")
     public JAXBElement<Integer> createY(Integer value) {
@@ -113,7 +103,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "", name = "label")
     public JAXBElement<String> createLabel(String value) {
@@ -122,7 +111,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "", name = "tokens")
     public JAXBElement<Integer> createTokens(Integer value) {
@@ -131,7 +119,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "", name = "isStatic")
     public JAXBElement<Boolean> createIsStatic(Boolean value) {
@@ -140,7 +127,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "", name = "static")
     public JAXBElement<Boolean> createStatic(Boolean value) {
@@ -149,7 +135,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "", name = "sourceId")
     public JAXBElement<Integer> createSourceId(Integer value) {
@@ -158,7 +143,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "", name = "destinationId")
     public JAXBElement<Integer> createDestinationId(Integer value) {
@@ -167,7 +151,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "", name = "multiplicity")
     public JAXBElement<Integer> createMultiplicity(Integer value) {
@@ -176,7 +159,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "", name = "type")
     public JAXBElement<String> createType(String value) {

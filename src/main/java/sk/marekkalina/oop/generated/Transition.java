@@ -11,9 +11,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType&gt;
  *   &lt;complexContent&gt;
@@ -28,15 +28,13 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "id",
-    "x",
-    "y",
-    "label"
+        "id",
+        "x",
+        "y",
+        "label"
 })
 @XmlRootElement(name = "transition")
 public class Transition {
@@ -49,7 +47,6 @@ public class Transition {
 
     /**
      * Gets the value of the id property.
-     * 
      */
     public int getId() {
         return id;
@@ -57,7 +54,6 @@ public class Transition {
 
     /**
      * Sets the value of the id property.
-     * 
      */
     public void setId(int value) {
         this.id = value;
@@ -65,7 +61,6 @@ public class Transition {
 
     /**
      * Gets the value of the x property.
-     * 
      */
     public int getX() {
         return x;
@@ -73,7 +68,6 @@ public class Transition {
 
     /**
      * Sets the value of the x property.
-     * 
      */
     public void setX(int value) {
         this.x = value;
@@ -81,7 +75,6 @@ public class Transition {
 
     /**
      * Gets the value of the y property.
-     * 
      */
     public int getY() {
         return y;
@@ -89,7 +82,6 @@ public class Transition {
 
     /**
      * Sets the value of the y property.
-     * 
      */
     public void setY(int value) {
         this.y = value;
@@ -97,11 +89,9 @@ public class Transition {
 
     /**
      * Gets the value of the label property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getLabel() {
         return label;
@@ -109,11 +99,9 @@ public class Transition {
 
     /**
      * Sets the value of the label property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setLabel(String value) {
         this.label = value;

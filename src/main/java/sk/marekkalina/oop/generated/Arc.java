@@ -13,9 +13,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType&gt;
  *   &lt;complexContent&gt;
@@ -32,17 +32,15 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "id",
-    "type",
-    "sourceId",
-    "destinationId",
-    "multiplicity",
-    "breakPoint"
+        "id",
+        "type",
+        "sourceId",
+        "destinationId",
+        "multiplicity",
+        "breakPoint"
 })
 @XmlRootElement(name = "arc")
 public class Arc {
@@ -58,7 +56,6 @@ public class Arc {
 
     /**
      * Gets the value of the id property.
-     * 
      */
     public int getId() {
         return id;
@@ -66,7 +63,6 @@ public class Arc {
 
     /**
      * Sets the value of the id property.
-     * 
      */
     public void setId(int value) {
         this.id = value;
@@ -74,11 +70,9 @@ public class Arc {
 
     /**
      * Gets the value of the type property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ArcType }
-     *     
+     *
+     * @return possible object is
+     * {@link ArcType }
      */
     public ArcType getType() {
         return type;
@@ -86,11 +80,9 @@ public class Arc {
 
     /**
      * Sets the value of the type property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ArcType }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link ArcType }
      */
     public void setType(ArcType value) {
         this.type = value;
@@ -98,7 +90,6 @@ public class Arc {
 
     /**
      * Gets the value of the sourceId property.
-     * 
      */
     public int getSourceId() {
         return sourceId;
@@ -106,7 +97,6 @@ public class Arc {
 
     /**
      * Sets the value of the sourceId property.
-     * 
      */
     public void setSourceId(int value) {
         this.sourceId = value;
@@ -114,7 +104,6 @@ public class Arc {
 
     /**
      * Gets the value of the destinationId property.
-     * 
      */
     public int getDestinationId() {
         return destinationId;
@@ -122,7 +111,6 @@ public class Arc {
 
     /**
      * Sets the value of the destinationId property.
-     * 
      */
     public void setDestinationId(int value) {
         this.destinationId = value;
@@ -130,7 +118,6 @@ public class Arc {
 
     /**
      * Gets the value of the multiplicity property.
-     * 
      */
     public int getMultiplicity() {
         return multiplicity;
@@ -138,7 +125,6 @@ public class Arc {
 
     /**
      * Sets the value of the multiplicity property.
-     * 
      */
     public void setMultiplicity(int value) {
         this.multiplicity = value;
@@ -146,25 +132,23 @@ public class Arc {
 
     /**
      * Gets the value of the breakPoint property.
-     * 
+     *
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the breakPoint property.
-     * 
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getBreakPoint().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link BreakPoint }
-     * 
-     * 
      */
     public List<BreakPoint> getBreakPoint() {
         if (breakPoint == null) {

@@ -1,12 +1,6 @@
 package sk.marekkalina.oop.generated;
 import sk.marekkalina.oop.petrinet.PNet;
-import sk.marekkalina.oop.generated.Document;
-import sk.marekkalina.oop.generated.Transformer;
-import java.util.ArrayList;
-import java.util.List;
-import sk.marekkalina.oop.generated.Transition;
 
-import static com.sun.deploy.cache.Cache.exists;
 
 public class PetrinetTransformer extends Transformer<PNet> {
 
@@ -52,8 +46,7 @@ public class PetrinetTransformer extends Transformer<PNet> {
             {
                 if(place1.getId()==arc.getDestinationId())
                 { isPlace=true;}
-                else{ continue;}
-            };
+            }
 
 
             if(isPlace)

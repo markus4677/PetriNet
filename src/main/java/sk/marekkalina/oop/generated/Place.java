@@ -11,9 +11,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType&gt;
  *   &lt;complexContent&gt;
@@ -33,18 +33,16 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "id",
-    "x",
-    "y",
-    "label",
-    "tokens",
-    "isStatic",
-    "_static"
+        "id",
+        "x",
+        "y",
+        "label",
+        "tokens",
+        "isStatic",
+        "_static"
 })
 @XmlRootElement(name = "place")
 public class Place {
@@ -61,7 +59,6 @@ public class Place {
 
     /**
      * Gets the value of the id property.
-     * 
      */
     public int getId() {
         return id;
@@ -69,7 +66,6 @@ public class Place {
 
     /**
      * Sets the value of the id property.
-     * 
      */
     public void setId(int value) {
         this.id = value;
@@ -77,7 +73,6 @@ public class Place {
 
     /**
      * Gets the value of the x property.
-     * 
      */
     public int getX() {
         return x;
@@ -85,7 +80,6 @@ public class Place {
 
     /**
      * Sets the value of the x property.
-     * 
      */
     public void setX(int value) {
         this.x = value;
@@ -93,7 +87,6 @@ public class Place {
 
     /**
      * Gets the value of the y property.
-     * 
      */
     public int getY() {
         return y;
@@ -101,7 +94,6 @@ public class Place {
 
     /**
      * Sets the value of the y property.
-     * 
      */
     public void setY(int value) {
         this.y = value;
@@ -109,11 +101,9 @@ public class Place {
 
     /**
      * Gets the value of the label property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getLabel() {
         return label;
@@ -121,11 +111,9 @@ public class Place {
 
     /**
      * Sets the value of the label property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setLabel(String value) {
         this.label = value;
@@ -133,7 +121,6 @@ public class Place {
 
     /**
      * Gets the value of the tokens property.
-     * 
      */
 
     public int getTokens() {
@@ -142,7 +129,6 @@ public class Place {
 
     /**
      * Sets the value of the tokens property.
-     * 
      */
     public void setTokens(int value) {
         this.tokens = value;
@@ -150,11 +136,9 @@ public class Place {
 
     /**
      * Gets the value of the isStatic property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     *
+     * @return possible object is
+     * {@link Boolean }
      */
     public Boolean isIsStatic() {
         return isStatic;
@@ -162,11 +146,9 @@ public class Place {
 
     /**
      * Sets the value of the isStatic property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Boolean }
      */
     public void setIsStatic(Boolean value) {
         this.isStatic = value;
@@ -174,11 +156,9 @@ public class Place {
 
     /**
      * Gets the value of the static property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     *
+     * @return possible object is
+     * {@link Boolean }
      */
     public Boolean isStatic() {
         return _static;
@@ -186,11 +166,9 @@ public class Place {
 
     /**
      * Sets the value of the static property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Boolean }
      */
     public void setStatic(Boolean value) {
         this._static = value;

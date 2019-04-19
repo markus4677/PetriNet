@@ -20,7 +20,6 @@ public class PetriObject {
     }
 
 
-
     public PetriObject(String name, long ID) {
         this.name = name;
         this.ID = ID;

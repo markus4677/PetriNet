@@ -3,12 +3,7 @@ package sk.marekkalina.oop.petrinet;
 public class Place extends PetriObject {
 
 
-    private int x;
-    private int y;
-
     private int tokens = 0;
-
-
 
 
     public Place(long ID, String name, int tokens) {
@@ -31,12 +26,11 @@ public class Place extends PetriObject {
     }
 
 
+    boolean test_tokens(int weight) {
+        return (tokens >= weight);
+    }
 
-
-    public boolean test_tokens(int weight)
-    {
-        return (tokens>=weight);
-    };
+    ;
 
     public int getTokens() {
         return tokens;

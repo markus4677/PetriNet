@@ -1,53 +1,47 @@
 package sk.marekkalina.oop.graphics;
 
-import javafx.scene.control.ButtonBar;
 import sk.marekkalina.oop.generated.Document;
 import sk.marekkalina.oop.generated.DrawableTransformer;
 import sk.marekkalina.oop.generated.Importer;
 import sk.marekkalina.oop.generated.PetrinetTransformer;
 import sk.marekkalina.oop.petrinet.PNet;
-import sk.marekkalina.oop.generated.*;
 
-import javax.swing.*;
+
 import javax.xml.bind.JAXBException;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+
+
 import java.io.FileNotFoundException;
 import java.util.List;
 
 
-
-
-
 public class MyFrame extends Frame implements ActionListener {
-    private MenuBar menuBar;
 
 
     private MyCanvas canvas;
 
-    public MyFrame() throws  HeadlessException {
+    public MyFrame() throws HeadlessException {
 
 
-        super("Petrinere editor");
+        super("Petrinet");
         setVisible(true);
-        setSize(1600,800);
+        setSize(1600, 800);
         addWindowListener(new Closer()); //not by Chainsmokers
 
         //but.setForeground(Color.yellow);
 
 
         this.canvas = new MyCanvas();
-        this.add("Center",canvas);
+        this.add("Center", canvas);
 
         canvas.setBackground(Color.WHITE);
-        menuBar = new MenuBar();
+        MenuBar menuBar = new MenuBar();
 
 
         Menu menu1 = new Menu("File");
-        MenuItem mItem1 = new MenuItem("Select file ...");
+        MenuItem mItem1 = new MenuItem("Open...");
         mItem1.setActionCommand("New");
         menu1.add(mItem1);
         menuBar.add(menu1);
@@ -58,15 +52,12 @@ public class MyFrame extends Frame implements ActionListener {
         canvas.addMouseListener(canvas);
 
 
-
-
-    };
-
+    }
 
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getActionCommand().equals("New")) {
+        if (e.getActionCommand().equals("New")) {
             try {
 
                 FileDialog fileDialog = new FileDialog(this, "Otvor", FileDialog.LOAD);
@@ -87,10 +78,7 @@ public class MyFrame extends Frame implements ActionListener {
 
                 canvas.setElementList(drawableList);
                 canvas.repaint();
-            } catch (FileNotFoundException e1) {
-                e1.printStackTrace();
-                System.out.println(e1.getMessage());
-            } catch (JAXBException e1) {
+            } catch (FileNotFoundException | JAXBException e1) {
                 e1.printStackTrace();
                 System.out.println(e1.getMessage());
             }

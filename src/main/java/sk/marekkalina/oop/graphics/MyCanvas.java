@@ -7,7 +7,7 @@ import java.util.List;
 
 public class MyCanvas extends Canvas implements MouseListener {
 
-    private List<Drawable> elementList = new LinkedList<Drawable>();
+    private List<Drawable> elementList = new LinkedList<>();
 
     public void setElementList(List<Drawable> elementList) {
         this.elementList = elementList;

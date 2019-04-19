@@ -14,15 +14,14 @@ import java.util.List;
 
 public class DrawableTransformer extends Transformer<List<Drawable>> {
 
-private PNet net;
+    private PNet net;
 
-    public DrawableTransformer(PNet net)
-    {
+    public DrawableTransformer(PNet net) {
         this.net = net;
     }
+
     @Override
-    public List<Drawable> transform(Document document)
-    {
+    public List<Drawable> transform(Document document) {
         List<Drawable> drawablesList = new LinkedList<>();
 
 
@@ -34,11 +33,12 @@ private PNet net;
             int x2 = (document.docgetTransitionByID(arc.getDestinationId())).getX();
             int y2 = (document.docgetTransitionByID(arc.getDestinationId())).getY();
 
-            Arcc2D A = new Arcc2D((float) x1+20,(float) y1+20,(float) x2+20,(float) y2+20);
+            Arcc2D A = new Arcc2D((float) x1 + 20, (float) y1 + 20, (float) x2 + 20, (float) y2 + 20);
 
             drawablesList.add(A);
 
-        };
+        }
+        ;
 
         for (Arc arc : document.getArc()) {
 
@@ -48,16 +48,15 @@ private PNet net;
             int x2 = (document.docgetTransitionByID(arc.getSourceId())).getX();
             int y2 = (document.docgetTransitionByID(arc.getSourceId())).getY();
 
-            Arcc2D A = new Arcc2D((float) x1+20,(float) y1+20,(float) x2+20,(float) y2+20);
+            Arcc2D A = new Arcc2D((float) x1 + 20, (float) y1 + 20, (float) x2 + 20, (float) y2 + 20);
 
             drawablesList.add(A);
 
-        };
+        }
+        ;
 
 
-
-        for (Place place:document.getPlace())
-        {
+        for (Place place : document.getPlace()) {
             Place2D p = new Place2D(
                     place.getX(),
                     place.getY(),
@@ -66,13 +65,10 @@ private PNet net;
             drawablesList.add(p);
 
 
-
-
         }
 
 
-        for (Transition transition2: document.getTransition())
-        {
+        for (Transition transition2 : document.getTransition()) {
             Transition2D t = new Transition2D(transition2.getX(),
                     transition2.getY(),
                     (sk.marekkalina.oop.petrinet.Transition) net.getTransitionByID(transition2.getId())
@@ -81,18 +77,8 @@ private PNet net;
         }
 
 
-
-
-
-
-
-
-
-
-
         return drawablesList;
     }
-
 
 
 }

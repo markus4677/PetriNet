@@ -2,21 +2,19 @@ package sk.marekkalina.oop.petrinet;
 
 import sun.java2d.loops.TransformBlit;
 
-public class Arc extends PetriObject
-{
+public class Arc extends PetriObject {
 
-    private int weight=1;
+    private int weight = 1;
     private direction dir;
     private Place spot;
     private Transition trans;
-
 
 
 //explicitné volanie konštruktora
 
     enum direction {
 
-      PLACE_TO_TRANSITION {
+        PLACE_TO_TRANSITION {
             public boolean fire_test(Place p, int weight) {
                 return p.test_tokens(weight);
             }
@@ -29,6 +27,7 @@ public class Arc extends PetriObject
             public boolean fire_test(Place p, int weight) {
                 return true;
             }
+
             public void fire(Place p, int weight) {
                 p.addTokens(weight);
             }
@@ -45,17 +44,11 @@ public class Arc extends PetriObject
         return weight;
     }
 
-    public direction getDir() {
-        return dir;
-    }
 
     public Place getSpot() {
         return spot;
     }
 
-    public Transition getTrans() {
-        return trans;
-    }
 
     private Arc(direction direct, Place spott, Transition transs) {
         this.dir = direct;
@@ -70,15 +63,14 @@ public class Arc extends PetriObject
     }
 
 
-    public Arc(Transition trans, Place spot)
-    {
+    public Arc(Transition trans, Place spot) {
         this(direction.TRANSITION_TO_PLACE, spot, trans);
         trans.addOutputArcs(this);
     }
 
     public boolean fire_test() {
-    return dir.fire_test(spot, weight);
-}
+        return dir.fire_test(spot, weight);
+    }
 
     public void fire() {
         this.dir.fire(spot, this.weight);

@@ -3,13 +3,12 @@ package sk.marekkalina.oop.petrinet;
 public class ResetArc extends PetriObject {
 
 
-    private int weight=0;
+    private int weight = 0;
     private Place spot;
     private Transition trans;
 
 
-    public void fire(Place spot)
-    {
+    public void fire(Place spot) {
         spot.setTokens(0);
     }
 
@@ -20,7 +19,6 @@ public class ResetArc extends PetriObject {
         trans.addResetArc(this);
 
     }
-
 
 
     public void fire() {

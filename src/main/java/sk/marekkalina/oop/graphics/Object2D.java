@@ -10,5 +10,4 @@ public interface Object2D {
     void onClick(MouseEvent eevee);
 
 
-
 }

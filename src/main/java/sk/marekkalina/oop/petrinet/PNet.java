@@ -15,41 +15,40 @@ public class PNet extends PetriObject {
     //Place miesto = new Place("strom",15 );
     //Place miesto=spots
 
-//    public void AddPlace(String name, long ID,int tokens) {
+    //    public void AddPlace(String name, long ID,int tokens) {
 //        Place p = new Place(name,ID);
 //        p.addTokens(tokens);
 //        spots.add(p);
 //    }
-public List<Arc> getArcs() {
-    if (arcs== null) {
-       arcs= new ArrayList<Arc>();
-    }
-    return this.arcs;
-}
+//    public List<Arc> getArcs() {
+//        if (arcs == null) {
+//            arcs = new ArrayList<Arc>();
+//        }
+//        return this.arcs;
+//    }
 
 
+    protected int j;
 
-protected int j;
-    public Place getPlaceByID(long ID)
-    {
+    public Place getPlaceByID(long ID) {
 
-        for(Place pp:spots)
-        {
-            if(pp.getID()==ID) {j=spots.indexOf(pp);}
-            else continue;
+        for (Place pp : spots) {
+            if (pp.getID() == ID) {
+                j = spots.indexOf(pp);
+            } else continue;
         }
         return spots.get(j);
     }
 
 
-protected int i;
-    public Transition getTransitionByID(long ID)
-    {
+    protected int i;
 
-        for (Transition tt:trans)
-        {
-            if(tt.getID()==ID) {i=trans.indexOf(tt);}
-                else  continue;
+    public Transition getTransitionByID(long ID) {
+
+        for (Transition tt : trans) {
+            if (tt.getID() == ID) {
+                i = trans.indexOf(tt);
+            } else continue;
         }
         return trans.get(i);
     }
@@ -66,32 +65,27 @@ protected int i;
 //            return num;
 //    }
 
-    public void addPlace(Place place)
-    {
+    public void addPlace(Place place) {
 
 
         spots.add(place);
     }
 
 
-
-    public void addTransition(Transition transs)
-    {
+    public void addTransition(Transition transs) {
         trans.add(transs);
     }
 
-    public void addArc(Arc arc)
-    {
+    public void addArc(Arc arc) {
         arcs.add(arc);
     }
 
 
-    public List<Place> getPlaces()
-    {
+    public List<Place> getPlaces() {
         return spots;
     }
-    public List<Transition> getTransitions()
-    {
+
+    public List<Transition> getTransitions() {
         return trans;
     }
 
@@ -99,38 +93,34 @@ protected int i;
 
 
     public Place place(String name, long ID) {
-        Place p = new Place(name,ID);
+        Place p = new Place(name, ID);
         spots.add(p);
         return p;
     }
-    public Transition trans(String name, long ID)
-    {
+
+    public Transition trans(String name, long ID) {
         Transition t = new Transition(name, ID);
         trans.add(t);
 
         return t;
     }
 
-    public Arc arc(Place p, Transition t)
-    {
-        Arc arc = new Arc(p,t);
-        arcs.add(arc);
-        return arc;
-    }
-    public Arc arc(Transition t, Place p)
-    {
-        Arc arc = new Arc(t,p);
+    public Arc arc(Place p, Transition t) {
+        Arc arc = new Arc(p, t);
         arcs.add(arc);
         return arc;
     }
 
-    public ResetArc resetarc(Place p, Transition t)
-    {
-      ResetArc resetarc = new ResetArc(p,t);
-      return resetarc;
+    public Arc arc(Transition t, Place p) {
+        Arc arc = new Arc(t, p);
+        arcs.add(arc);
+        return arc;
     }
 
-
+    public ResetArc resetarc(Place p, Transition t) {
+        ResetArc resetarc = new ResetArc(p, t);
+        return resetarc;
+    }
 
 
 //    public void add(Place spott)
@@ -143,20 +133,16 @@ protected int i;
 //    }
 
 
-
 //    public PNet(String name, long ID) {
 //        super(name, ID);
 //    }
 
 
-
-
-    public void fire(long ID)
-    {
-        for (Transition T : trans)
-        {
-           if(ID== T.getID())
-           {T.fire();}
+    public void fire(long ID) {
+        for (Transition T : trans) {
+            if (ID == T.getID()) {
+                T.fire();
+            }
         }
     }
 

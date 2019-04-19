@@ -1,5 +1,6 @@
 
 package sk.marekkalina.oop.generated;
+
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
@@ -7,7 +8,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for arc_type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
@@ -21,7 +22,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/restriction&gt;
  * &lt;/simpleType&gt;
  * </pre>
- * 
  */
 @XmlType(name = "arc_type")
 @XmlEnum
@@ -48,7 +48,7 @@ public enum ArcType {
     }
 
     public static ArcType fromValue(String v) {
-        for (ArcType c: ArcType.values()) {
+        for (ArcType c : ArcType.values()) {
             if (c.value.equals(v)) {
                 return c;
             }
